@@ -1,0 +1,27 @@
+server:
+  port: ${SERVER_PORT:8081}
+  error:
+    include-stacktrace: never
+
+spring:
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/bootdb
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+app:
+  url: ${SERVER_URL:192.168.0.141}
+  stock-manager:
+    url: ${STOCK_MANAGER_URL:localhost}
+    port: ${STOCK_MANAGER_PORT:8080}
+    protocol: ${STOCK_MANAGER_PROTOCOL:http}
