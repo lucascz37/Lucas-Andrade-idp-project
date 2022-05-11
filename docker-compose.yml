@@ -20,7 +20,7 @@ services:
       - "8081:8081"
     depends_on:
       - stockManager
-      - database
+      - mysql
 
 networks:
   compose-bridge:

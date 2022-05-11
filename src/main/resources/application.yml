@@ -20,7 +20,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 app:
-  url: ${SERVER_URL:192.168.0.141}
+  url: ${SERVER_URL:localhost}
   stock-manager:
     url: ${STOCK_MANAGER_URL:localhost}
     port: ${STOCK_MANAGER_PORT:8080}
