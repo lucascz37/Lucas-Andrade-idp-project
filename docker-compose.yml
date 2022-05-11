@@ -3,9 +3,16 @@ services:
   mysql:
     image: mysql:8
     container_name: database
+    networks:
+      - compose-bridge
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: bootdb
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping"]
+      interval: 10s
+      timeout: 2s
+      retries: 5
   stockManager:
     image: lucasvilela/stock-manager
     container_name: stock-manager
@@ -16,11 +23,17 @@ services:
     container_name: stock-quotes
     networks:
       - compose-bridge
+    environment:
+      MYSQL_HOST: database
+      STOCK_MANAGER_URL: stock-manager
     ports:
       - "8081:8081"
     depends_on:
-      - stockManager
-      - mysql
+      mysql:
+        condition: service_healthy
+      stockManager:
+        condition: service_started
+
 
 networks:
   compose-bridge:
