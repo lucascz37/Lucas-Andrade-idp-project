@@ -2,6 +2,7 @@ server:
   port: ${SERVER_PORT:8081}
   error:
     include-stacktrace: never
+    include-message: always
 
 spring:
   jpa:
@@ -11,7 +12,6 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-    open-in-view: false
 
   datasource:
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/bootdb
