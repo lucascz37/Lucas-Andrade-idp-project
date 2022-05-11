@@ -1,11 +1,15 @@
 ## Stock-quotes service :chart_with_upwards_trend:
 
-## endpoints
-- /quotes Post and Get http methods.
-- /quotes/{stock_id} Get method.
+This service main purpose is to create/read stock quotes from registered stocks available on the stock-manager API.
+
+## Endpoints
+- /quotes POST and GET http methods.
+- /quotes/{stock_id} GET method.
 - /stockcache for internal use by the stock-manager API.
 
-## simple POST request payload.
+## Architecture
+![Alt text](images/architecture.png?raw=true "Title")
+## Simple POST request payload.
 ```json
 {
   "stockId": "petr4",
