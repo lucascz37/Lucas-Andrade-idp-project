@@ -6,6 +6,7 @@ This service main purpose is to create/read stock quotes from registered stocks 
 - /quotes POST and GET http methods.
 - /quotes/{stock_id} GET method.
 - /stockcache for internal use by the stock-manager API.
+- /swagger-ui/index.html some additional documentation.
 
 ## Architecture
 ![Alt text](images/architecture.png?raw=true "Title")
@@ -14,7 +15,7 @@ This service main purpose is to create/read stock quotes from registered stocks 
 {
   "stockId": "petr4",
   "quotes": {
-    "2020-10-10": "22.20"
+    "2020-10-20": "22.20"
   }
 }
 ```
@@ -31,7 +32,7 @@ This service main purpose is to create/read stock quotes from registered stocks 
 ```
 
 ## How to run quickly.
-* Just download the docker-compose-yml
+* Just download the docker-compose.yml
 * install docker & docker-compose
 * ```docker-compose up```
 * You're good to go :rocket:
