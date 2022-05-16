@@ -18,12 +18,15 @@ services:
     container_name: stock-manager
     networks:
       - compose-bridge
+    ports:
+      - "8080:8080"
   stockQuotes:
     image: lucascz37/stock-quotes
     container_name: stock-quotes
     networks:
       - compose-bridge
     environment:
+      SERVER_URL: stock-quotes
       MYSQL_HOST: database
       STOCK_MANAGER_URL: stock-manager
     ports:
